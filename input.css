@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* =========================
+   RAIN EFFECT
+========================= */
+
+.rain-drop {
+    position: fixed;
+    width: 2px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.3);
+    top: -120px;
+    animation: rainFall 1s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes rainFall {
+
+    from {
+        transform: translateY(-100vh);
+    }
+
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+
+
+/* =========================
+   MOVING CLOUDS
+========================= */
+
+.cloud {
+    position: fixed;
+    width: 220px;
+    opacity: 0.55;
+    animation: moveClouds 25s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes moveClouds {
+
+    from {
+        transform: translateX(-300px);
+    }
+
+    to {
+        transform: translateX(120vw);
+    }
+}
+
+
+
+/* =========================
+   SUN GLOW EFFECT
+========================= */
+
+.sun-glow {
+    position: fixed;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: rgb(255, 234, 0);
+    filter: blur(70px);
+    top: 50px;
+    right: 50px;
+    animation: sunPulse 3s infinite ease-in-out;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes sunPulse {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
+/* =========================
+   SNOW EFFECT
+========================= */
+
+.snowflake {
+    position: fixed;
+    top: -20px;
+    color: white;
+    animation: snowFall linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes snowFall {
+
+    from {
+        transform: translateY(-100vh);
+    }
+
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+
+
+/* =========================
+   LIGHTNING EFFECT
+========================= */
+
+.flash {
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.25);
+    animation: lightning 2s infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes lightning {
+
+    0%,
+    94%,
+    100% {
+        opacity: 0;
+    }
+
+    95% {
+        opacity: 1;
+    }
+
+    96% {
+        opacity: 0;
+    }
+
+    97% {
+        opacity: 1;
+    }
+
+    98% {
+        opacity: 0;
+    }
+}
+
+
+
+/* =========================
+   HAZE / FOG EFFECT
+========================= */
+
+.fog {
+    position: fixed;
+    width: 400px;
+    height: 200px;
+    background: rgba(255,255,255,0.08);
+    filter: blur(60px);
+    border-radius: 50%;
+    animation: fogMove 20s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes fogMove {
+
+    from {
+        transform: translateX(-500px);
+    }
+
+    to {
+        transform: translateX(120vw);
+    }
+}
